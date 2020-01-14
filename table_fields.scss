@@ -1,0 +1,30 @@
+.tbl-flds {
+	display: table;
+	width: 100%;
+	
+	&.t-f-auto { width: auto; }
+	&.t-f-fixed { table-layout: fixed; }
+
+	&>div { 
+		display: table-cell;
+		vertical-align: top; 
+	}
+	
+	&.t-f-vmiddle { &>div { vertical-align: middle; } }
+	&.t-f-vbottom { &>div { vertical-align: bottom; } }
+	
+	
+	&.t-f-rows {
+		&.t-f-vmiddle { &>div { &>div { vertical-align: middle;} } }
+		&.t-f-vbottom { &>div { &>div { vertical-align: bottm; } } }
+	
+		&>div {
+			display: table-row;
+			
+			&>div { 
+				display: table-cell;
+				vertical-align: top; 
+			}
+		}	
+	}
+}
